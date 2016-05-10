@@ -1,0 +1,15 @@
+{{ ansible_managed | comment }}
+
+{{ bacula_client_config_filedaemon | encode_nginx }}
+
+{%- if bacula_client_config_director | length > 0 -%}
+{{ "\n" }}{{ bacula_client_config_director | encode_nginx }}
+{%- endif %}
+
+{%- if bacula_client_config_messages | length > 0 -%}
+{{ "\n" }}{{ bacula_client_config_messages | encode_nginx }}
+{%- endif %}
+
+{%- if bacula_client_config_custom | length > 0 -%}
+{{ "\n" }}{{ bacula_client_config_custom | encode_nginx }}
+{%- endif %}

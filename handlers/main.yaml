@@ -1,0 +1,9 @@
+---
+
+- name: Restart Bacula Client service
+  service:
+    name: "{{ bacula_client_service }}"
+    state: restarted
+  when: >
+    bacula_client_service_started is not defined or
+    not bacula_client_service_started.changed
