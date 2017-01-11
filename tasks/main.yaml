@@ -10,7 +10,6 @@
 - name: Install Bacula Client package
   package:
     name: "{{ bacula_client_pkg }}"
-    state: present
   notify:
     - Restart Bacula Client service
   tags:
