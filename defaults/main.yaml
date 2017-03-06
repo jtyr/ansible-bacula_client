@@ -37,7 +37,7 @@ bacula_client_config_filedaemon:
 
 # Default values of Director resource options
 bacula_client_config_director_options_name: bacula-dir
-bacula_client_config_director_options_password: bacula
+bacula_client_config_director_options_password: "{{ bacula_director_config_director_options_password | default('bacula') }}"
 
 # Default Director resource options
 bacula_client_config_director_options__default:
@@ -98,8 +98,8 @@ bacula_client_config_custom: []
 bacula_client_sysconfig_file: /etc/sysconfig/bacula-fd
 
 # Default values of the default sysconfig options
-bacula_client_sysconfig_user: ""
-bacula_client_sysconfig_group: ""
+bacula_client_sysconfig_user: "root"
+bacula_client_sysconfig_group: "root"
 
 # Default sysconfig options
 bacula_client_sysconfig__default:
