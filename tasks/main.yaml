@@ -1,12 +1,5 @@
 ---
 
-- name: Test distribution
-  assert:
-    that: >
-      ansible_os_family == "RedHat"
-  tags:
-    - bacula_client_assert
-
 - name: Install Bacula Client package
   package:
     name: "{{ bacula_client_pkg }}"
