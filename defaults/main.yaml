@@ -42,7 +42,7 @@ bacula_client_config_director_options_password: "{{ bacula_director_config_direc
 # Default Director resource options
 bacula_client_config_director_options__default:
   - Name = {{ bacula_client_config_director_options_name }}
-  - Password = {{ bacula_client_config_director_options_password }}
+  - Password = "{{ bacula_client_config_director_options_password }}"
 
 # Custom Director resource options
 bacula_client_config_director_options__custom: []
