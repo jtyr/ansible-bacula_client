@@ -9,6 +9,9 @@ galaxy_info:
     - name: EL
       versions:
         - 6
+    - name: Debian
+      versions:
+        - jessie
   categories:
     - system
 dependencies:
