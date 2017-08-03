@@ -13,8 +13,12 @@ bacula_client_config_file_path: /etc/bacula/bacula-fd.conf
 # Values of the default FileDaemon options
 bacula_client_config_filedaemon_options_name: "{{ inventory_hostname }}-fd"
 bacula_client_config_filedaemon_options_fdport: 9102
-bacula_client_config_filedaemon_options_working_directory: /var/spool/bacula
-bacula_client_config_filedaemon_options_pid_directory: /var/run
+bacula_client_config_filedaemon_options_working_directory: "{{
+    '/var/spool/bacula' if ansible_os_family == "RedHat"
+    else '/var/lib/bacula' }}"
+bacula_client_config_filedaemon_options_pid_directory: "{{
+    '/var/run' if ansible_os_family == "RedHat"
+    else '/var/run/bacula' }}"
 bacula_client_config_filedaemon_options_pid_max_jobs: 20
 
 # Default FileDaemon resource options for the first FileDaemon definition

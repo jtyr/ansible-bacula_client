@@ -3,7 +3,8 @@
 - name: Test distribution
   assert:
     that: >
-      ansible_os_family == "RedHat"
+      ansible_os_family == "RedHat" or
+      ansible_os_family == "Debian"
   tags:
     - bacula_client_assert
 
